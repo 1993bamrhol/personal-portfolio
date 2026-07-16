@@ -161,11 +161,21 @@
 }
 
 .project-shot-real-estate img {
-  object-position: right top;
+  object-position: center top;
+}
+
+.project-shot-sales img {
+  object-position: center 62%;
+  transform: scale(1.12);
+  transform-origin: center 62%;
 }
 
 .project-card:hover .project-shot img {
   transform: scale(1.025);
+}
+
+.project-card:hover .project-shot-sales img {
+  transform: scale(1.17);
 }
 
 .project-private {
