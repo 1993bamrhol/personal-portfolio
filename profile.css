@@ -5,6 +5,15 @@
   letter-spacing: .02em;
 }
 
+.button-cv {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+.button-cv:hover {
+  background: var(--acid);
+}
+
 .vision-strip {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -126,6 +135,51 @@
   margin-top: 22px;
 }
 
+.project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card:nth-child(3) {
+  grid-column: auto;
+}
+
+.project-shot {
+  height: 340px;
+  margin: 0 0 25px;
+  overflow: hidden;
+  background: #dfe2dc;
+  border: 1px solid rgba(9, 12, 16, .08);
+}
+
+.project-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform .55s ease;
+}
+
+.project-shot-real-estate img {
+  object-position: right top;
+}
+
+.project-card:hover .project-shot img {
+  transform: scale(1.025);
+}
+
+.project-private {
+  display: flex;
+  align-items: center;
+  padding: 14px 15px;
+  background: #e5e7e1;
+  color: #59605d;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
 .project-action {
   display: flex;
   justify-content: space-between;
@@ -187,5 +241,18 @@
 
   .project-actions {
     grid-template-columns: 1fr;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-shot {
+    height: 280px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
