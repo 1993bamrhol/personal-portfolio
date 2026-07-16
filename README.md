@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-A responsive English portfolio website for Sameh Ahmed Salem Bamrhool. It includes a profile portrait, professional experience, education, languages, selected GitHub projects, technical expertise, LinkedIn, and contact details.
+A responsive English portfolio website for Sameh Bamrhool. It includes a profile portrait, independent technical experience, education, languages, selected GitHub projects, technical expertise, LinkedIn, and contact details.
 
 ## Preview
 
