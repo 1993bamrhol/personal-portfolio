@@ -4,14 +4,34 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const menuButton = document.querySelector(".menu-button");
 const nav = document.getElementById("site-nav");
+const closeMenu = () => {
+  nav.classList.remove("open");
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation");
+};
+
 menuButton.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
 });
-nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-  nav.classList.remove("open");
-  menuButton.setAttribute("aria-expanded", "false");
-}));
+nav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && nav.classList.contains("open")) {
+    closeMenu();
+    menuButton.focus();
+  }
+});
+document.addEventListener("click", event => {
+  if (nav.classList.contains("open") && !event.target.closest(".site-header")) closeMenu();
+});
+
+const revealElements = [...document.querySelectorAll(".reveal")];
+const deepLinkedSection = window.location.hash ? document.querySelector(window.location.hash) : null;
+if (deepLinkedSection) {
+  deepLinkedSection.classList.add("visible");
+  deepLinkedSection.querySelectorAll(".reveal").forEach(element => element.classList.add("visible"));
+}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -21,7 +41,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+revealElements.filter(element => !element.classList.contains("visible")).forEach(element => observer.observe(element));
 
 async function refreshGitHubMetadata() {
   const status = document.getElementById("github-status");
