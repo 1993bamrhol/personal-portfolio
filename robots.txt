@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://1993bamrhol.github.io/personal-portfolio/sitemap.xml

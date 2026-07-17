@@ -1,0 +1,17 @@
+{
+  "name": "Sameh Bamrhool Portfolio",
+  "short_name": "Sameh",
+  "description": "Software developer and data product builder based in Riyadh.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f2f0e9",
+  "theme_color": "#090c10",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
